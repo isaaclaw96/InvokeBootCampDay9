@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JS Timer</title>
+    <script>
+        // setInterval(moveBox, 1000)
+        // function moveBox( ){
+        //     console.log("hi!")
+        // }
+
+        // setInterval(function(){
+        //     console.log('running without function name')
+        // }, 1000);
+
+        // var timer = setInterval(function(){
+        //     console.log('using timer var');
+        // }, 1000);
+
+        // clearInterval(timer);
+        var score = 0;
+        var box1X = 0;
+        var box2Y = 0;
+        var box3X = 0;
+        var box3Y = 0;
+
+
+        setTimeout (countdown, 5000)
+        function countdown(){
+            console.log ('hi')
+            clearInterval(boxInterval)
+        } //to stop the timer
+
+        setTimeout (countdown2, 10000);
+        function countdown2() {
+            setInterval(counting, 100);
+        } //to start back
+
+        var boxInterval = setInterval(counting,1000); //initial
+
+        function counting(){
+            var scoreText = document.querySelector('h1');
+
+            score += 1;
+            scoreText.innerHTML = score;
+
+            box1X += 50;
+            if (box1X >= 900){
+                box1X = -100;
+            };
+            document.getElementById("box1").style.left = box1X + 'px';
+
+            box2Y += 50;
+            if (box2Y >= 600){
+                box2Y = -100;
+            };
+            document.getElementById('box2').style.top = box2Y + 'px';
+
+            box3X += 50;
+            box3Y += 20;
+            // if (box3X >= 900){
+            //     box3X = -100;
+            // }
+            // if (box3Y = 600){
+            //     box3Y = -100
+            // };
+            document.getElementById('box3').style.top = box3X + 'px';
+            document.getElementById('box3').style.left = box3Y + 'px';
+        }
+    </script>
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        #container {
+            width: 900px;
+            height: 600px;
+            border: 1px solid black;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        #box1 {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: blue;
+        }
+        #box2 {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            background-color: red;
+        }
+        #box3 {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            background-color: green;
+        }
+    </style>
+    </head>
+
+    <body>
+        <div id="container">
+            <h1>0</h1>
+            <div id="box1"></div>
+            <div id="box2"></div>
+            <div id="box3"></div>
+        </div>
+    </body>
+
+</html>

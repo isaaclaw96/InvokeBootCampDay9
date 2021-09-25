@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Music Player</title>
+
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="day9style.css" /> 
+    </head>
+    <body>
+        <div id="app">
+            <section id="section-first">
+               <div>
+                    <div id="title-container">
+                    <audio id="sng" src="audio/song1.mp3" autoplay loop></audio>
+                    <h1 id="titleTag">Song Title</h1>
+                    <h5 id="artistTag">Artist</h5>
+                    </div> 
+                </div>
+                <div id="buttons">
+                    <div id="previous" class="vid-btn" onclick="switchNext(-1)">
+                        <i class="fas fa-backward"></i>
+                    </div>
+    
+                    <div id="switch-btn" class="vid-btn" onclick="switchClick()">
+                        <i class="fas fa-play"></i>
+                    </div>
+    
+                    <div id="next" class="vid-btn" onclick="switchNext(1)">
+                        <i class="fas fa-forward"></i>
+                    </div>
+                    <div class="vid-btn" onclick="updateVol(-0.1)"><i class="fas fa-volume-down"></i></div>
+                    <div class="vid-btn" onclick="updateVol(0.1)"><i class="fas fa-volume-up"></i></div>
+                    <div id="mute-btn" class="vid-btn" onclick="muteVol()"><i class="fas fa-volume-mute"></i></div>
+                </div>
+                <div id="arrow"><img src="images/Vector.png"></div>
+            </section>
+
+            <section id="section-two">
+                <div class="songs-container" onclick="getSong('songlist1')">
+                    <p>01</p>
+                    <div class="album-img"><img src="images/song1.jpg"></div>
+                    <div><h2>a lot</h2><p>21 Savage | <span>I Am > I Was 2018</span></p></div>
+                    <div id="plus"> <img src="images/plus.png"></div>
+                </div>
+                <div class="songs-container" onclick="getSong('songlist2')">
+                    <p>02</p>
+                    <div class="album-img"><img src="images/song2.jpg"></div>
+                    <div><h2>Middle Child</h2><p>J Cole | <span>MIDDLE CHILD 2019</span></p></div>
+                    <div id="plus"> <img src="images/plus.png"></div>
+                </div>
+                <div class="songs-container" onclick="getSong('songlist3')">
+                    <p>03</p>
+                    <div class="album-img"><img src="images/song3.jpg"></div>
+                    <div><h2>Feels Like Summer</h2><p>Childish Gambino | <span>Summer Pack 2019</span></p></div>
+                    <div id="plus"> <img src="images/plus.png"></div>
+                </div>
+                <div class="songs-container" onclick="getSong('songlist4')">
+                    <p>04</p>
+                    <div class="album-img"><img src="images/song4.jfif"></div>
+                    <div><h2>Redbone</h2><p>Childish Gambino | <span>Awake, My Love! 2016</span></p></div>
+                    <div id="plus"> <img src="images/plus.png"></div>
+                </div>
+                <div class="songs-container" onclick="getSong('songlist5')">
+                    <p>05</p>
+                    <div class="album-img"><img src="images/song5.jpg"></div>
+                    <div><h2>SICKO MODE</h2><p>Travis Scott | <span>Astroworld 2018</span></p></div>
+                    <div id="plus"> <img src="images/plus.png"></div>
+                </div>
+            </section>
+
+            <section id="section-three">
+                <div id="random-words">
+                    <p>Winter is here, It's cold outside - Stay warm with these songs.</p>
+                    <p>Created by cf. | 5 songs</p>
+                </div>
+
+            </section>
+
+        </div>
+        <script src="day9js.js"></script>
+    </body>
+</html>
